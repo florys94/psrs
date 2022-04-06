@@ -1,5 +1,5 @@
-use std::io;
 use std::collections::VecDeque;
+use std::io;
 
 #[allow(unused_macros)]
 macro_rules! read {
@@ -37,7 +37,7 @@ fn breadth_first_search(tree: &Vec<Vec<(usize, usize)>>, dist: &mut Vec<usize>, 
 
         for i in 0..tree[start].len() {
             let (end, d) = tree[start][i];
-            
+
             if !visited[end] {
                 dist[end] = dist[start] + d;
                 queue.push_back(end);
@@ -81,7 +81,7 @@ fn main() {
             start = i;
         }
     }
-    
+
     dist = vec![0; v + 1];
 
     breadth_first_search(&tree, &mut dist, start);
